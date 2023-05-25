@@ -2,25 +2,23 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Pursuing Masters in Robotics. | I teach robots to navigate the world.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile.png
   image_circular: false # crops the image to make it circular
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>857-313-0460</p>
+    <p>Boston, MA, 02120</p>
 
-news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false  # includes a list of news items
+latest_posts: false  # includes a list of the newest posts
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Hi! I am Yash Mewada, a **Masters in Robotics** student with a concentration in Electrical and Computer Engineering at **[Northeastern University](https://graduate.northeastern.edu/program/master-of-science-in-robotics-17772/){:target="\_blank"}**. I did my Bachelors. in **Instrumentation and Control Engineering** from **[Vishwakarma Government Engineering College](https://vgecg.ac.in/){:target="\_blank"}**, India in 2022. I became inclined toward Robotics and Automation during my undergrad where I was a part of my university’s **[robotics club](https://www.gturoboticsclub.in/){:target="\_blank"}** for over 3 years and there I served as both a Technical Core Electronics member and a Management member. \
+During the tenure of 3 years, I learned and implemented control systems and autonomous and semi-autonomous robots. My goal is to continue learning and growing throughout my career which is why I came to Boston to pursue my Master’s.  \
+My research is in Probabilistic Robotics i.e **SLAM, Perception, Motion Planners, and Autonomous Navigation** i.e the technologies and methodologies that make Autonomous Mobile Robots AUTONOMOUS. \
+I have a deep passion for such technologies and which is why I am constantly learning and exploring these areas.
