@@ -74,9 +74,12 @@
     - title: <a href="https://yashmewada9618.github.io/projects/2_project/">Image Mosaicing and Stereo Vision</a>
       year: Feb 2023 - Mar 2023
       description: Devised an algorithm for detecting and aligning features in multiple images through Homography estimation and subsequent panorama generation. A depth estimation algorithm was also performed to determine the disparity between stereo images.
-    - title: <a href="https://yashmewada9618.github.io/projects/3_project/">Navigation stack using IMU and GPS</a>
+    - title: <a href="https://yashmewada9618.github.io/projects/6_project/">Navigation stack using IMU and GPS</a>
       year: Jan 2023 - Feb 2023
       description: Formulated a ROS driver using IMU and GPS for autonomous navigation. Employed Allan variance analysis to assess IMU stability and integrated Complimentary Filter and Dead reckoning algorithms to accurately estimate the vehicle’s true position.
+    - title: <a href="https://yashmewada9618.github.io/projects/5_project/">Image Filtering and Noise Estimation</a>
+      year: Jan 2023 - Feb 2023
+      description: Developed a noise estimation algorithm on additive Gaussian noise images.
     - title: <a href="https://yashmewada9618.github.io/projects/4_project/">Motion detection using simple Image Filtering</a>
       year: Jan 2023 - Feb 2023
       description: Created a motion detection algorithm leveraging temporal evolution and a derivative of Gaussian Filter over image sequences. Also developed a noise estimation algorithm with a 98% accuracy rate.
