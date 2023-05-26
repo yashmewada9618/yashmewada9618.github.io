@@ -1,6 +1,5 @@
-set /p commitflg="Enter Commit flag": 
-echo %commitflg%
-echo "%commitflg%"
+set /p commitflg="Enter Commit flag: ": 
 git init
 git add .
 git commit -m "%commitflg%"
+git push
