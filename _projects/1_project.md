@@ -19,13 +19,13 @@ After these features were detected the **Spare Optical Flow** was used to track 
     I(x,y,t) = I(x + \Delta x,y + \Delta y,t + \Delta t)
 \end{equation}
 Using Taylor series expansion we can rewrite the equation as. \
-\begin{equation*}
+\begin{equation}
     I(x,y,t) - I(x + \Delta x,y + \Delta y,t + \Delta t) = 0
-\end{equation*}
-\begin{equation*}
+\end{equation}
+\begin{equation}
     I_x^{'} u + I_y^{'} v = -I_t^{'}
-\end{equation*} \
-Where $u = \frac{dx}{dt}$ and $v = \frac{dy}{dt}$
+\end{equation} \
+Where $$u = \frac{dx}{dt}$$ and $$v = \frac{dy}{dt}$$
 Hence the pixel motion between two consecutive frames can be written as.
 \begin{equation}
     I_1 - I_2 \approx I_x^{'} u + I_y^{'} v + I_t^{'}
