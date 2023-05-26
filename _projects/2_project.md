@@ -14,7 +14,7 @@ The aim of this project was to find interesting features and correspondences bet
 **Fundamental Matrix** - In computer vision, a fundamental matrix is a 3x3 matrix that related the stereo images based on the epipolar lines. \ Fundamental matrices works with uncalibrated camera. Lets say $$v1$$ and $$v2$$ are the two corresponding feature points in a stereo pair of images. Hence for every these two paired points the following remains true...
 
 \begin{equation}
-    \begin{bmatrix} f_{11} && f_{12} && f_{13} \\ f_{21} && f_{22} && f_{23} \\ f_{31} && f_{32} && f_{33} \end{bmatrix} \begin{bmatrix} v_1x \\ v_1y \\ 1 \end{bmatrix}^\top \begin{bmatrix} v_2x \\ v_2y \\
+    \begin{bmatrix} f_{11} & f_{12} & f_{13} \\\\ f_{21} & f_{22} & f_{23} \\\\ f_{31} & f_{32} & f_{33} \end{bmatrix} \begin{bmatrix} v_1x \\\\ v_1y \\\\ 1 \end{bmatrix}^\top \begin{bmatrix} v_2x \\\\ v_2y \\\\
     1 \end{bmatrix} = 0
 \end{equation} 
 

@@ -26,20 +26,20 @@ The basic outline of this project followed the below steps.
 any two images with same planar surface in space are related by a transformation matrix with 8 degrees of freedom. This matrix is mainly ussed for immage rectification.
 \begin{equation}
     \begin{bmatrix}
-lx'\\
-ly'\\
-1 \\
+lx'\\\\
+ly'\\\\
+1 \\\\
 \end{bmatrix}
 = 
 \begin{bmatrix}
-h11  && h12 && h13\\
-h21  && h22 && h23\\
-h31  && h32 && h33\\
+h11  & h12 & h13\\\\
+h21  & h22 & h23\\\\
+h31  & h32 & h33\\\\
 \end{bmatrix}
 \begin{bmatrix}
-rx\\
-ry\\
-1\\
+rx\\\\
+ry\\\\
+1\\\\
 \end{bmatrix}
 \end{equation}
 
