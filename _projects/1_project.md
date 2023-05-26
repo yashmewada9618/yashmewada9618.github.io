@@ -31,9 +31,8 @@ Hence the pixel motion between two consecutive frames can be written as.
     I_1 - I_2 \approx I_x^{'} u + I_y^{'} v + I_t^{'}
 \end{equation}
 
-![caption](assets/video/sfm.gif)
-<!-- <div class="row mt-3">
+<div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.html path="assets/video/sfm.gif" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
+        {% include video.html path="assets/video/sfm.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
     </div>
-</div> -->
+</div>
