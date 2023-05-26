@@ -125,7 +125,7 @@
           </header>
 
           <article>
-            <p><a href="https://github.com/yashmewada9618/Image-Mosaicing" rel="external nofollow noopener" target="_blank">GitHub</a> \</p>
+            <p><a href="https://github.com/yashmewada9618/Image-Mosaicing" rel="external nofollow noopener" target="_blank">GitHub</a></p>
 
 <p>The purpose of this project was to find corner features in multiple images and to align the images
 in a mosaic by estimating a homography between corresponding features <br>
@@ -144,22 +144,7 @@ The basic outline of this project followed the below steps.</p>
 <p><strong>Homography Matrix</strong> - Just like fundamental matrix in previous project, the Homography matrix is a matrix that states that
 any two images with same planar surface in space are related by a transformation matrix with 8 degrees of freedom. This matrix is mainly ussed for immage rectification.
 \begin{equation}
-    \begin{bmatrix}
-lx’\<br>
-ly’\<br>
-1 \<br>
-\end{bmatrix}
-= 
-\begin{bmatrix}
-h11  &amp; h12 &amp; h13\<br>
-h21  &amp; h22 &amp; h23\<br>
-h31  &amp; h32 &amp; h33\<br>
-\end{bmatrix}
-\begin{bmatrix}
-rx\<br>
-ry\<br>
-1\<br>
-\end{bmatrix}
+    \begin{bmatrix} lx’\\ ly’\\ 1 \end{bmatrix} =  \begin{bmatrix} h11  &amp; h12 &amp; h13\\ h21  &amp; h22 &amp; h23\\ h31  &amp; h32 &amp; h33\\ \end{bmatrix} \begin{bmatrix} rx\\ ry\\ 1 \end{bmatrix}
 \end{equation}</p>
 
 <p>where l is left image pixel and r is right image pixel.</p>
