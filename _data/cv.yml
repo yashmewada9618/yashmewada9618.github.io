@@ -38,7 +38,7 @@
         -  <a href="https://neu-autonomy.github.io/lab_website" target="_blank">Autonomy & Intelligence Laboratory</a>
     - title: Embedded Software Intern
       institution: <a href="https://www.studiocarbon.in/" target="_blank">Studio Carbon</a>, Gandhinagar, India
-      year: March 2022 - Sept 2022
+      year: Mar 2022 - Sept 2022
       description:
         - As an Embedded software intern I was reponsible for programming and developing the mathematics of a smart fitness device. This device utilised a small laser pointer on top of a small laser based distance sensor. This whole assembly rotated on top of a 3d printed cylinder with the help of a DC encoded motor that gave the Yaw motion to the device. 
         - The pitch motion was acheived with the help of a small stepper motor. Here I designed a feed-forward and PID control system, reducing motor positioning error from 20° to 5° increasing the accuracy of the motor positioning, and programmed the firmware for a smart stepper motor. 
