@@ -8,7 +8,7 @@ category: work
 tags: formatting math
 ---
 
-<a href="https://github.com/yashmewada9618/Image-Mosaicing">GitHub</a> \
+<a href="https://github.com/yashmewada9618/Image-Mosaicing">GitHub</a>
 
 The purpose of this project was to find corner features in multiple images and to align the images
 in a mosaic by estimating a homography between corresponding features \
@@ -25,22 +25,7 @@ The basic outline of this project followed the below steps.
 **Homography Matrix** - Just like fundamental matrix in previous project, the Homography matrix is a matrix that states that
 any two images with same planar surface in space are related by a transformation matrix with 8 degrees of freedom. This matrix is mainly ussed for immage rectification.
 \begin{equation}
-    \begin{bmatrix}
-lx'\\\\
-ly'\\\\
-1 \\\\
-\end{bmatrix}
-= 
-\begin{bmatrix}
-h11  & h12 & h13\\\\
-h21  & h22 & h23\\\\
-h31  & h32 & h33\\\\
-\end{bmatrix}
-\begin{bmatrix}
-rx\\\\
-ry\\\\
-1\\\\
-\end{bmatrix}
+    \begin{bmatrix} lx'\\\\ ly'\\\\ 1 \end{bmatrix} =  \begin{bmatrix} h11  & h12 & h13\\\\ h21  & h22 & h23\\\\ h31  & h32 & h33\\\\ \end{bmatrix} \begin{bmatrix} rx\\\\ ry\\\\ 1 \end{bmatrix}
 \end{equation}
 
 where l is left image pixel and r is right image pixel.
