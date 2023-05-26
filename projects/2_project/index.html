@@ -126,12 +126,12 @@
 
           <article>
             <p><a href="https://github.com/yashmewada9618/Sterreo-Vision" rel="external nofollow noopener" target="_blank">GitHub</a> <br>
-The aim of this project was to find interesting features and correspondences between the left and right images using either the CORNERS and NCC algorithms or SIFT features and descriptors. The results are displayed by connecting corresponding features with different colored lines to make it easier to visualize. A program is also developed to estimate the Fundamental Matrix for each pair using the correspondences above and RANSAC to eliminate outliers. \</p>
+The aim of this project was to find interesting features and correspondences between the left and right images using either the CORNERS and NCC algorithms or SIFT features and descriptors. The results are displayed by connecting corresponding features with different colored lines to make it easier to visualize. A program is also developed to estimate the Fundamental Matrix for each pair using the correspondences above and RANSAC to eliminate outliers.</p>
 
-<p><strong>Fundamental Matrix</strong> - In computer vision, a fundamental matrix is a 3x3 matrix that related the stereo images based on the epipolar lines. \ Fundamental matrices works with uncalibrated camera. Lets say \(v1\) and \(v2\) are the two corresponding feature points in a stereo pair of images. Hence for every these two paired points the following remains true… \</p>
+<p><strong>Fundamental Matrix</strong> - In computer vision, a fundamental matrix is a 3x3 matrix that related the stereo images based on the epipolar lines. \ Fundamental matrices works with uncalibrated camera. Lets say \(v1\) and \(v2\) are the two corresponding feature points in a stereo pair of images. Hence for every these two paired points the following remains true…</p>
 
 <p>\begin{equation}
-    \begin{bmatrix} f_{11} &amp; f_{12} &amp; f_{13} \ f_{21} &amp; f_{22} &amp; f_{23} \ f_{31} &amp; f_{32} &amp; f_{33} \end{bmatrix} \begin{bmatrix} v_1x \ v_1y \ 1 \end{bmatrix}^\top \begin{bmatrix} v_2x \ v_2y <br>
+    \begin{bmatrix} f_{11} &amp;&amp; f_{12} &amp;&amp; f_{13} \ f_{21} &amp;&amp; f_{22} &amp;&amp; f_{23} \ f_{31} &amp;&amp; f_{32} &amp;&amp; f_{33} \end{bmatrix} \begin{bmatrix} v_1x \ v_1y \ 1 \end{bmatrix}^\top \begin{bmatrix} v_2x \ v_2y <br>
     1 \end{bmatrix} = 0
 \end{equation}</p>
 
