@@ -2,7 +2,7 @@
 layout: page
 title: Robo Rugby.
 description: ABU-Robocon 2020 Robotics Competition.
-img: assets/img/g20.png
+img: assets/img/g20ach.png
 importance: 8
 category: work
 ---
@@ -17,7 +17,7 @@ Consisted of one pass robot and one try robot. The pass robot passed the rugby b
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/g20ach.png" title="disparity image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/g20.png" title="disparity image" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/g20rbt.png" title="disparity image" class="img-fluid rounded z-depth-1" %}
