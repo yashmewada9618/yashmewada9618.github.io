@@ -3,7 +3,7 @@ layout: page
 title: Autonomous Navigation and SLAM.
 description: A complete autonomous system using turtlebot3.
 img: assets/img/tb3.png
-importance: 4
+importance: 5
 category: work
 ---
 
