@@ -136,13 +136,13 @@ After these features were detected the <strong>Spare Optical Flow</strong> was u
     I(x,y,t) = I(x + \Delta x,y + \Delta y,t + \Delta t)
 \end{equation}
 Using Taylor series expansion we can rewrite the equation as. <br>
-\begin{equation<em>}
+\begin{equation}
     I(x,y,t) - I(x + \Delta x,y + \Delta y,t + \Delta t) = 0
-\end{equation</em>}
-\begin{equation<em>}
+\end{equation}
+\begin{equation}
     I_x^{‘} u + I_y^{‘} v = -I_t^{‘}
-\end{equation</em>} <br>
-Where $u = \frac{dx}{dt}$ and $v = \frac{dy}{dt}$
+\end{equation} <br>
+Where \(u = \frac{dx}{dt}\) and \(v = \frac{dy}{dt}\)
 Hence the pixel motion between two consecutive frames can be written as.
 \begin{equation}
     I_1 - I_2 \approx I_x^{‘} u + I_y^{‘} v + I_t^{‘}
