@@ -8,7 +8,7 @@ importance: 1
 category: work
 ---
 
-<a href="https://github.com/yashmewada9618/Structure-From-Motion-by-factorization">GitHub</a>
+<a href="https://github.com/yashmewada9618/Structure-From-Motion-by-factorization">GitHub</a> \
 This project details a novel approach for Structure from Motion based on optical flow and factorization for the reconstruction of surfaces with few textures. 
 An original image search and grouping strategy allows to the reconstruction of each 3D scene point using a large set of 2D homologous points extracted from a reference image
 and its superimposed images acquired from different viewpoints. \
@@ -18,20 +18,22 @@ After these features were detected the **Spare Optical Flow** was used to track 
 \begin{equation}
     I(x,y,t) = I(x + \Delta x,y + \Delta y,t + \Delta t)
 \end{equation}
-Using Taylor series expansion we can rewrite the equation as.
+Using Taylor series expansion we can rewrite the equation as. \
 \begin{equation*}
     I(x,y,t) - I(x + \Delta x,y + \Delta y,t + \Delta t) = 0
 \end{equation*}
 \begin{equation*}
     I_x^{'} u + I_y^{'} v = -I_t^{'}
-\end{equation*}
+\end{equation*} \
 Where $u = \frac{dx}{dt}$ and $v = \frac{dy}{dt}$
 Hence the pixel motion between two consecutive frames can be written as.
 \begin{equation}
     I_1 - I_2 \approx I_x^{'} u + I_y^{'} v + I_t^{'}
 \end{equation}
-<div class="row mt-3">
+
+![caption](assets/video/sfm.gif)
+<!-- <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include video.html path="assets/video/sfm.gif" class="img-fluid rounded z-depth-1" controls=true autoplay=true %}
     </div>
-</div>
+</div> -->
