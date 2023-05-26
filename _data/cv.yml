@@ -1,8 +1,8 @@
 - title: General Information
   type: map
   contents:
-    - name: Yash Mewada
-      value: Albert Einstein
+    - name: Full Name
+      value: Yash R. Mewada
     - name: Date of Birth
       value: 30th October 2000
     - name: Languages
@@ -37,7 +37,7 @@
         - Research work on High-Speed, off-road Autonomy in robots using online MPC (Model Predictive Control) based motion planning.
         -  <a href="https://neu-autonomy.github.io/lab_website" target="_blank">Autonomy & Intelligence Laboratory</a>
     - title: Embedded Software Intern
-      institution: Studio Carbon, Gandhinagar, India
+      institution: <a href="https://www.studiocarbon.in/" target="_blank">Studio Carbon</a>, Gandhinagar, India
       year: March 2022 - Sept 2022
       description:
         - As an Embedded software intern I was reponsible for programming and developing the mathematics of a smart fitness device. This device utilised a small laser pointer on top of a small laser based distance sensor. This whole assembly rotated on top of a 3d printed cylinder with the help of a DC encoded motor that gave the Yaw motion to the device. 
@@ -45,7 +45,7 @@
         - Apart from this I was also reponsible for programming a BLE stack for a smart fitness device, enabling seamless communication with a mobile app. I also developed a closed-loop control system for a laser-based distance sensor, capable of accurately counting the number of taps.
 
     - title: Embedded R&D Intern
-      institution: WeHear Hearing Solutions
+      institution: <a href="https://wehear.in/" target="_blank">WeHear Hearing Solutions</a>, Ahmedabad, India
       year: Jan 2019 - July 2019
       description: 
       - Developed a BLE-based hearing aid device employing bandpass filtering on MEMS I2S microphone data.
@@ -69,10 +69,10 @@
   type: time_table
   contents:
     - title: <a href="https://github.com/alshedivat/al-folio">Structure From Motion</a>
-      year: March 2023 - April 2023
+      year: Mar 2023 - Apr 2023
       description: Implemented factorization method for SFM based on Cholesky decomposition and KLT-based feature tracker for given 100 images.
     - title: <a href="https://github.com/alshedivat/al-folio">Image Mosaicing and Stereo Vision</a>
-      year: Feb 2023 - March 2023
+      year: Feb 2023 - Mar 2023
       description: Devised an algorithm for detecting and aligning features in multiple images through Homography estimation and subsequent panorama generation. A depth estimation algorithm was also performed to determine the disparity between stereo images.
     - title: <a href="https://github.com/alshedivat/al-folio">Navigation stack using IMU and GPS</a>
       year: Jan 2023 - Feb 2023
@@ -81,7 +81,7 @@
       year: Jan 2023 - Feb 2023
       description: Created a motion detection algorithm leveraging temporal evolution and a derivative of Gaussian Filter over image sequences. Also developed a noise estimation algorithm with a 98% accuracy rate.
     - title: <a href="https://github.com/alshedivat/al-folio">Autonomous Navigation and SLAM</a>
-      year: March 2023 - April 2023
+      year: Mar 2023 - Apr 2023
       description: Developed an autonomous system for reconnaissance in simulated disaster zones using Cartographer-based SLAM and frontier exploration. Achieved accurate victim detection (13 out of 15) through extrinsic camera calibration.
     - title: <a href="https://www.youtube.com/watch?v=z_xH6zuQCZw">Lagori Piling Robot</a>
       year: Sept 2021 - July 2022
@@ -90,7 +90,7 @@
       year: Sept 2020 - July 2021
       description: <a href="https://www.youtube.com/watch?v=19KotBhEFhY">Gameplay and Robots</a>
     - title: <a href="https://github.com/alshedivat/al-folio">Robo Rugby</a>
-      year: August 2019 - July 2020
+      year: Aug 2019 - July 2020
       description: <a href="https://www.youtube.com/watch?v=Vfn6hGiWpeg">Gameplay and Robots</a>
 
 - title: Academic Interests

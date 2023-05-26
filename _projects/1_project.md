@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: Structure From Motion
+description: 3D reconstruction based on sequence of images
+img: ![caption](assets/video/sfm.gif)
 importance: 1
 category: work
 ---
