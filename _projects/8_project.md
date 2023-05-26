@@ -2,7 +2,7 @@
 layout: page
 title: Lagori Pilling Robot.
 description: ABU-Robocon 2022 Robotics Competition
-img: assets/img/grc2022
+img: assets/img/grc2022.png
 importance: 6
 category: work
 ---
