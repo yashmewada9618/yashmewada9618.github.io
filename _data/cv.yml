@@ -83,10 +83,10 @@
     - title: <a href="https://yashmewada9618.github.io/projects/4_project/">Motion detection using simple Image Filtering</a>
       year: Jan 2023 - Feb 2023
       description: Created a motion detection algorithm leveraging temporal evolution and a derivative of Gaussian Filter over image sequences. Also developed a noise estimation algorithm with a 98% accuracy rate.
-    - title: <a href="https://github.com/alshedivat/al-folio">Autonomous Navigation and SLAM</a>
+    - title: <a href="https://yashmewada9618.github.io/projects/7_project/">Autonomous Navigation and SLAM</a>
       year: Mar 2023 - Apr 2023
       description: Developed an autonomous system for reconnaissance in simulated disaster zones using Cartographer-based SLAM and frontier exploration. Achieved accurate victim detection (13 out of 15) through extrinsic camera calibration.
-    - title: <a href="https://www.youtube.com/watch?v=z_xH6zuQCZw">Lagori Piling Robot</a>
+    - title: <a href="https://yashmewada9618.github.io/projects/8_project/">Lagori Piling Robot</a>
       year: Sept 2021 - July 2022
       description: <a href="https://www.youtube.com/watch?v=z_xH6zuQCZw">Gameplay and Robots</a>
     - title: <a href="https://github.com/alshedivat/al-folio">Throwing arrow in the pot</a>
