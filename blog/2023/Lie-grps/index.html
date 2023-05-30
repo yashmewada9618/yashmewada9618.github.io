@@ -140,32 +140,72 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p><em>This post is still in progress</em> <br>
+      <p><em>This post is still in progress and it only covers the brief of Lie groups.</em> <br>
 In this blog I will be explaining about what are lie groups. So, Lie groups are a type of mani…. argh!! let’s start from the very begining.</p>
 
 <p>Lie groups and Lie algebra are one of the trickiest topics to understand, especially if you are in the field of Robotics. To understand lie groups and their significance in robotics, you first have to understand how rotations/headings of the robot works. I was first introduced by Lie Groups when I first took the class of Mobile Robotics at Northeastern Univeristy in Fall 2022 under Prof. <a href="https://david-m-rosen.github.io/" target="_blank" rel="external nofollow noopener">David Rosen</a>.</p>
 
 <p>Let’s start of from a simple robot navigation problem. Lets say you have an IMU that gives you the heading of the robot with some noisy data as follows: \</p>
 
-<p>\begin{equation}
+<p>\begin{equation<em>}
     \theta_1 = 10.1
-\end{equation}
-\begin{equation}
+\end{equation</em>}
+\begin{equation<em>}
     \theta_2 = 0.1
-\end{equation}
+\end{equation</em>}
 \begin{equation} 
     \theta_3 = 0.6
-\end{equation}
-\begin{equation}
+\end{equation<em>}
+\begin{equation</em>}
     \theta_4 = 10.7
-\end{equation}</p>
+\end{equation*}</p>
 
 <p>These four readings are noisy data, <strong>what will be the overall heading of the robot?</strong> You might be thinking of averaging the values and you might get the answere as \(\theta = 5.375\). Well this is not the correct answer. <em>Any guesses?</em></p>
 
 <p>You were asked to estimate the heading of the robot with a noisy IMU data, then why does simple averaging the data doesnot work? Let’s rewind back to high school days of what rotations look like.
 Rotations look like a unit circle in pure mathematics term it belongs to <em>SO(2) - Unit Circle</em> (more on this later in this post).</p>
 
-<p>It turns out what averaging the angles gave us belonged to \(\mathbb{R}\) which is a set of real numbers, where as <em>SO(2)</em> is quite a different topology. Having said that rotations belong to <em>SO(2)</em> group and simply averaging them will shift them 180 degrees apart. Look at the figure below</p>
+<p>It turns out what averaging the angles gave us belonged to \(\mathbb{R}\) which is a set of real numbers, where as <em>SO(2)</em> is quite a different topology. Having said that rotations belong to <em>SO(2)</em> group and simply averaging them will shift them 180 degrees apart. Look at the figure below.</p>
+
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+      <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/rotnvec-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/rotnvec-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/rotnvec-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/rotnvec.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+  </div>
+</div>
+<div class="caption">
+    Ref. Northeastern University Lecture slides by Prof. David Rosen.
+</div>
+
+<p><strong>Hence! this says that Rotations are not vectors so you cannot directly take average of them</strong></p>
+
+<p>Similar to this case there are certain cases in robotics where such kinds of vector spaces (<em>euclidean space</em>) are not formed (<em>as they are not preserved under the constraints of addition and multiplication</em>), for instance:</p>
+<ul>
+  <li>Rotations as we saw above.</li>
+  <li>Viewing headings in Computer Vision</li>
+  <li>A set of 2D planes in \(\mathbb{R}^3\) forms a manifold called <a href="https://en.wikipedia.org/wiki/Grassmannian" target="_blank" rel="external nofollow noopener">Grassmanian</a>
+</li>
+</ul>
+
+<p>Thus <strong>Manifolds</strong> are used.</p>
+
+<p>Manifolds are spaces that locally look like Euclidean spaces where we can perform our algebraic calculations. A <em>smooth manifold</em> is one whose differentiation exists at every point. A continuous function is one whose differentiation exists but is not guaranteed at each point. We call the tangent space Te(G) the Lie algebra of G. We can think of this as the set of infinitesimal generators for motion on G.</p>
+
+<p>From the below figure X is a smooth manifold if additionally the transition maps \(\phi{\alpha \beta} = \phi_\beta + \phi_\alpha^-1\) are differentiable in \(\mathbb{R}^n\).</p>
 
     </div>
   </article>
