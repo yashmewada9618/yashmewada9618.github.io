@@ -126,14 +126,12 @@
     <p class="post-tags">
       <a href="/blog/2023"> <i class="fas fa-calendar fa-sm"></i> 2023 </a>
         ·  
-        <a href="/blog/tag/formatting">
-          <i class="fas fa-hashtag fa-sm"></i> formatting</a>  
-          <a href="/blog/tag/math">
+        <a href="/blog/tag/math">
           <i class="fas fa-hashtag fa-sm"></i> math</a>  
           
         ·  
-        <a href="/blog/category/sample-posts">
-          <i class="fas fa-tag fa-sm"></i> sample-posts</a>  
+        <a href="/blog/category/basics">
+          <i class="fas fa-tag fa-sm"></i> basics</a>  
           
 
     </p>
@@ -142,7 +140,7 @@
   <article class="post-content">
     
     <div id="markdown-content">
-      <p><em>This post is still in progress</em>
+      <p><em>This post is still in progress</em> <br>
 In this blog I will be explaining about what are lie groups. So, Lie groups are a type of mani…. argh!! let’s start from the very begining.</p>
 
 <p>Lie groups and Lie algebra are one of the trickiest topics to understand, especially if you are in the field of Robotics. To understand lie groups and their significance in robotics, you first have to understand how rotations/headings of the robot works. I was first introduced by Lie Groups when I first took the class of Mobile Robotics at Northeastern Univeristy in Fall 2022 under Prof. <a href="https://david-m-rosen.github.io/" target="_blank" rel="external nofollow noopener">David Rosen</a>.</p>
@@ -150,20 +148,24 @@ In this blog I will be explaining about what are lie groups. So, Lie groups are 
 <p>Let’s start of from a simple robot navigation problem. Lets say you have an IMU that gives you the heading of the robot with some noisy data as follows: \</p>
 
 <p>\begin{equation}
-  \begin{split}
-    \theta_1 = 10.1<br>
-    \theta_2 = 0.1\ 
-    \theta_3 = 0.6<br>
+    \theta_1 = 10.1
+\end{equation}
+\begin{equation}
+    \theta_2 = 0.1
+\end{equation}
+\begin{equation} 
+    \theta_3 = 0.6
+\end{equation}
+\begin{equation}
     \theta_4 = 10.7
-  \end{split}
 \end{equation}</p>
 
 <p>These four readings are noisy data, <strong>what will be the overall heading of the robot?</strong> You might be thinking of averaging the values and you might get the answere as \(\theta = 5.375\). Well this is not the correct answer. <em>Any guesses?</em></p>
 
-<p>You were asked to estimate the heading of the robot with a noisy IMU data, then why does simple averaging the data doesnot work? Let’s rewind back to high school days of what rotations look like. <br>
+<p>You were asked to estimate the heading of the robot with a noisy IMU data, then why does simple averaging the data doesnot work? Let’s rewind back to high school days of what rotations look like.
 Rotations look like a unit circle in pure mathematics term it belongs to <em>SO(2) - Unit Circle</em> (more on this later in this post).</p>
 
-<p>It turns out what averaging the angles gave us belonged to \(\mathbb{R}\) which is a set of real numbers, where as <em>SO(2)</em> is quite a different topology.</p>
+<p>It turns out what averaging the angles gave us belonged to \(\mathbb{R}\) which is a set of real numbers, where as <em>SO(2)</em> is quite a different topology. Having said that rotations belong to <em>SO(2)</em> group and simply averaging them will shift them 180 degrees apart. Look at the figure below</p>
 
     </div>
   </article>
