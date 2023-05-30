@@ -8,7 +8,7 @@ tags: formatting math
 giscus_comments: true
 related_posts: true
 ---
-This post shows how to add custom styles for blockquotes. Based on [jekyll-gitbook](https://github.com/sighingnow/jekyll-gitbook) implementation.
+So in this blog I will be explaining about what are lie groups. So, Lie groups are a type of mani.... argh!! let's start from the very begining.
 
 We decided to support the same custom blockquotes as in [jekyll-gitbook](https://sighingnow.github.io/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html), which are also found in a lot of other sites' styles. The styles definitions can be found on the [_base.scss](https://github.com/alshedivat/al-folio/blob/master/_sass/_base.scss) file, more specifically:
 
