@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://yashmewada9618.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yashmewada9618.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-09T05:08:57+00:00</updated><id>https://yashmewada9618.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://yashmewada9618.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://yashmewada9618.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-09T05:13:49+00:00</updated><id>https://yashmewada9618.github.io/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Understanding Lie Groups and Manifolds - Foundations of Robotics</title><link href="https://yashmewada9618.github.io/blog/2023/Lie-grps/" rel="alternate" type="text/html" title="Understanding Lie Groups and Manifolds - Foundations of Robotics" /><published>2023-05-30T02:32:00+00:00</published><updated>2023-05-30T02:32:00+00:00</updated><id>https://yashmewada9618.github.io/blog/2023/Lie-grps</id><content type="html" xml:base="https://yashmewada9618.github.io/blog/2023/Lie-grps/"><![CDATA[<p><em>This post is still in progress and it only covers the brief of Lie groups.</em> <br />
 Lie groups and Lie algebra are fundamental concepts in robotics and one of the trickiest topics, particularly in the field of mobile robotics. These topics can be quite challenging to grasp, but they play a crucial role in understanding how robot movements, specifically rotations and headings, work. In this blog post, we will dive into the basics of Lie groups and their significance in robotics.</p>
 
-<p><strong>The inspiration</strong> <br />
-My journey into the world of Lie groups began during my time at Northeastern University in Fall 2022. It was in my Mobile Robotics class, led by the esteemed Professor <a href="https://david-m-rosen.github.io/" target="_blank">David Rosen</a>, that I was first introduced to the fascinating realm of Lie groups.</p>
+<h3 id="the-inspiration">The inspiration</h3>
+<p>My journey into the world of Lie groups began during my time at Northeastern University in Fall 2022. It was in my Mobile Robotics class, led by the esteemed Professor <a href="https://david-m-rosen.github.io/" target="_blank">David Rosen</a>, that I was first introduced to the fascinating realm of Lie groups.</p>
 
-<p><strong>The robot navigation problem</strong> <br />
-To appreciate the importance of Lie groups, let’s start with a simple robot navigation problem. Imagine you have an Inertial Measurement Unit (IMU) that provides you with the heading of the robot. However, this data is accompanied by some level of noise, making it imperfect.</p>
+<h3 id="the-robot-navigation-problem">The robot navigation problem</h3>
+<p>To appreciate the importance of Lie groups, let’s start with a simple robot navigation problem. Imagine you have an Inertial Measurement Unit (IMU) that provides you with the heading of the robot. However, this data is accompanied by some level of noise, making it imperfect.</p>
 
 <p>\begin{equation}
     \theta_1 = 10.1
@@ -66,13 +66,13 @@ Similar to this case there are certain cases in robotics where such kinds of vec
 
 <p>Thus <strong>Manifolds</strong> are used.</p>
 
-<p><strong>The Mathematical Definition of Manifolds</strong> <br />
-A manifold X is a topological space in which each and every point of this manifold has an open set U and a continous map \(\phi: U \longrightarrow V\) and with a continous inverse \(\phi^-1: V \longrightarrow U\).</p>
+<h3 id="the-mathematical-definition-of-manifolds">*The Mathematical Definition of Manifolds</h3>
+<p>A manifold X is a topological space in which each and every point of this manifold has an open set U and a continous map \(\phi: U \longrightarrow V\) and with a continous inverse \(\phi^-1: V \longrightarrow U\).</p>
 
 <p>Manifolds are spaces that locally look like Euclidean spaces where we can perform our algebraic calculations. A <em>smooth manifold</em> is one whose differentiation exists at every point. A continuous function is one whose differentiation exists but is not guaranteed at each point. We call the tangent space Te(G) the Lie algebra of G. We can think of this as the set of infinitesimal generators for motion on G.</p>
 
-<p><strong>Transition Maps and Manifold Structure</strong> <br />
-From the below figure X is a smooth manifold if additionally the transition maps \(\phi_{\alpha \beta} = \phi_\beta + \\phi_\alpha^{-1}\) are differentiable in \(\mathbb{R}^n\). For example a transition map that maps the every point of a semi-circle onto a linear axis, and on this linear axis we can perform algebriac steps. <em>Multiple</em> such maps form a unit circle or in other words mulitplw such maps cover an entire manifold.</p>
+<h3 id="transition-maps-and-manifold-structure">Transition Maps and Manifold Structure</h3>
+<p>From the below figure X is a smooth manifold if additionally the transition maps \(\phi_{\alpha \beta} = \phi_\beta + \\phi_\alpha^{-1}\) are differentiable in \(\mathbb{R}^n\). For example a transition map that maps the every point of a semi-circle onto a linear axis, and on this linear axis we can perform algebriac steps. <em>Multiple</em> such maps form a unit circle or in other words mulitplw such maps cover an entire manifold.</p>
 
 <div class="row mt-3">
   <div class="col-sm mt-3 mt-md-0">
@@ -134,9 +134,9 @@ From the below figure X is a smooth manifold if additionally the transition maps
     [Left] - The four charts each map part of the circle to an open interval, and together cover the whole circle. [Center] - The chart maps the part of the sphere with positive z coordinate to a disc. [Right] - Transition map. src - Wikipedia
 </div>
 
-<p>Now! to the core of this blog, <br />
-<strong>What are Lie Groups</strong> <br />
-At their core, Lie groups are a type of mathematical structure that combines the concepts of smooth manifolds and group theory. A Lie group is both a group, meaning it has a binary operation and identity element, and a smooth manifold, meaning it is locally Euclidean. In simple terms, a Lie group is a group with a continuous structure that allows for smooth transformations. <br />
+<p>Now! to the core of this blog, \</p>
+<h3 id="what-are-lie-groups">What are Lie Groups</h3>
+<p>At their core, Lie groups are a type of mathematical structure that combines the concepts of smooth manifolds and group theory. A Lie group is both a group, meaning it has a binary operation and identity element, and a smooth manifold, meaning it is locally Euclidean. In simple terms, a Lie group is a group with a continuous structure that allows for smooth transformations. <br />
 In the context of robotics, Lie groups provide a powerful framework for representing and manipulating orientations, such as rotations and poses. They allow us to perform operations like composition (combining transformations) and inversion (finding the inverse of a transformation) in a seamless and mathematically elegant manner. \</p>
 
 <p>Lie groups can be defined as smooth and continuous manifolds that possess a group structure and exhibit smooth and stable motions. They provide a mathematical framework to represent and manipulate rotations, translations, and joint configurations in robotics. In practical terms, Lie groups allow us to smoothly and continuously change joint configurations without causing abrupt or unpredictable changes in the end effector position. This smoothness and stability are essential for precise and reliable robot motions. \</p>
@@ -145,8 +145,8 @@ In the context of robotics, Lie groups provide a powerful framework for represen
 
 <p>In the upcoming blog posts, we will explore the properties and applications of Lie groups in more depth, uncovering their significance in various aspects of robotics. Stay tuned for a deeper dive into this fascinating topic!</p>
 
-<p><strong>Conclusion</strong> <br />
-Lie groups and Lie algebra serve as indispensable tools in the field of robotics, enabling us to model and manipulate rotations and poses effectively. Understanding their principles and applications can greatly enhance our ability to navigate the complex world of robotics. <br />
+<h3 id="conclusion">Conclusion</h3>
+<p>Lie groups and Lie algebra serve as indispensable tools in the field of robotics, enabling us to model and manipulate rotations and poses effectively. Understanding their principles and applications can greatly enhance our ability to navigate the complex world of robotics. <br />
 In upcoming post I will talk about the actual implementations of Lie Groups and Lie Algebra of how they are used in robotics and will try to explain it with a real world example.</p>
 
 <p>Thanks for reading ! :)</p>]]></content><author><name></name></author><category term="basics" /><category term="math" /><summary type="html"><![CDATA[How to move? Lie groups revisited]]></summary></entry></feed>
