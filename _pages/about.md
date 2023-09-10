@@ -30,7 +30,7 @@ My research is in Probabilistic Robotics i.e **SLAM, Perception, Motion Planners
 I have a deep passion for such technologies and which is why I am constantly learning and exploring these areas.
 
 
-*"You're either the one that creates the automation or you're getting automated." ~ Tom Preston-Werner*
+*"A robot that carries a notion of its own uncertainty and that acts accordingly is superior to one that does not." ~ Sebastian Thrun*
 
 
 Ready to embark on an electrifying journey together? Let's spark some innovation and build robots that will conquer the world! Connect with me and let's bring our wildest robotic dreams to life!
