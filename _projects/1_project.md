@@ -53,47 +53,55 @@ BA is a non-linear method for solving the problem of simultaneously refining a s
     \epsilon = \sum_{i=1}^{N} \sum_{j=1}^{M} \left\| \mathbf{u}_{ij} - \pi \left( \mathbf{P}_i \mathbf{X}_j \right) \right\|^2
 \end{equation}
 
-, where $\mathbf{u}_{ij}$ is the $j^{th}$ observed 2D point in the $i^{th}$ image, $\mathbf{P}_i$ is the camera matrix of the $i^{th}$ image and $\mathbf{X}_j$ is the $j^{th}$ 3D point. $\pi$ is the projection function which projects the 3D point to the image plane. The projection function is given by:
+, where $$\mathbf{u}_{ij}$$ is the $$j^{th}$$ observed 2D point in the $$i^{th}$$ image, $$\mathbf{P}_i$$ is the camera matrix of the $$i^{th}$$ image and $$\mathbf{X}_j$$ is the $$j^{th}$$ 3D point. $$\pi$$ is the projection function which projects the 3D point to the image plane. The projection function is given by:
+
 \begin{equation}
     \pi \left( \mathbf{P}_i \mathbf{X}_j \right) = \frac{1}{\mathbf{P}_{i_{3}} \mathbf{X}_{j_{3}}} \begin{bmatrix} \mathbf{P}_{i_{1}} \mathbf{X}_{j_{1}} \\ \mathbf{P}_{i_{2}} \mathbf{X}_{j_{2}} \end{bmatrix}
 \end{equation}
 
-Now the measurement variable $\mathbf{z}$ is given by:
+Now the measurement variable $$\mathbf{z}$$ is given by:
+
 \begin{equation}
     \mathbf{z} = h \left( \mathbf{u}_{ij}, \mathbf{X}_j \right) 
 \end{equation}
 
-, where $h$ is the measurement function which is given by:
+, where $$h$$ is the measurement function which is given by:
+
 \begin{equation}
     h \left( \mathbf{u}_{ij}, \mathbf{X}_j \right) = \mathbf{u}_{ij} - \pi \left( \mathbf{P}_i \mathbf{X}_j \right)
 \end{equation}
 
 Furthermore, the Jacobian of the measurement function is given by:
+
 \begin{equation}
     \mathbf{H} = \frac{\partial h}{\partial \mathbf{X}_j} = \begin{bmatrix} \frac{\partial h_1}{\partial \mathbf{X}_{j_{1}}} & \frac{\partial h_1}{\partial \mathbf{X}_{j_{2}}} & \frac{\partial h_1}{\partial \mathbf{X}_{j_{3}}} \\ \frac{\partial h_2}{\partial \mathbf{X}_{j_{1}}} & \frac{\partial h_2}{\partial \mathbf{X}_{j_{2}}} & \frac{\partial h_2}{\partial \mathbf{X}_{j_{3}}} \end{bmatrix}
 \end{equation}
 
 The error function is given by:
+
 \begin{equation}
     \mathbf{e} = \mathbf{z} - h \left( \mathbf{u}_{ij}, \mathbf{X}_j \right)
 \end{equation}
 
 The main idea is to minimize this error function which is a non-linear function. We can use any other non-linear optimization methods like Guass-Newton, Levenberg-Marquardt, etc. I have used Levenberg-Marquardt algorithm provided by the GTSAM library. For this specific problem there are two Jacobians formed, which are nothing but the partial derivatives of the poses and landmarks. The Jacobian of the poses is given by:
+
 \begin{equation}
     \frac{\partial \mathbf{e}}{\partial \mathbf{P}_i} = \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial \mathbf{z}}{\partial \mathbf{P}_i} = - \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial h}{\partial \mathbf{P}_i}
 \end{equation}
 
 The Jacobian of the landmarks is given by:
+
 \begin{equation}
     \frac{\partial \mathbf{e}}{\partial \mathbf{X}_j} = \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial \mathbf{z}}{\partial \mathbf{X}_j} = - \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial h}{\partial \mathbf{X}_j}
 \end{equation}
 
 We combine the Jacobians of the poses and landmarks to form the Hessian Matrix used in either Guass-Newton or Levenberg-Marquardt algorithm. The Hessian Matrix is given by:
+
 \begin{equation}
     \mathbf{H} = \mathbf{J}^T \mathbf{J}
 \end{equation}
 
-, where $\mathbf{J}$ is the Jacobian matrix. The Jacobian matrix is given by:
+, where $$\mathbf{J}$$ is the Jacobian matrix. The Jacobian matrix is given by:
 
 \begin{equation}
     \mathbf{J} = \begin{bmatrix} \frac{\partial \mathbf{e}}{\partial \mathbf{P}_1} & \frac{\partial \mathbf{e}}{\partial \mathbf{P}_2} & \cdots & \frac{\partial \mathbf{e}}{\partial \mathbf{P}_N} & \frac{\partial \mathbf{e}}{\partial \mathbf{X}_1} & \frac{\partial \mathbf{e}}{\partial \mathbf{X}_2} & \cdots & \frac{\partial \mathbf{e}}{\partial \mathbf{X}_M} \end{bmatrix}
