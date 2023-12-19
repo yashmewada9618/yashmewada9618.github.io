@@ -203,13 +203,17 @@ Hence the pixel motion between two consecutive frames can be written as.
 <p>, where \(h\) is the measurement function which is given by:</p>
 
 <p>\begin{equation}
-    h \left( \mathbf{u}<em>{ij}, \mathbf{X}_j \right) = \mathbf{u}</em>{ij} - \pi \left( \mathbf{P}_i \mathbf{X}_j \right)
+    h (\mathbf{u}<em>{ij}, \mathbf{X}_j) = \mathbf{u}</em>{ij} - \pi( \mathbf{P}_i \mathbf{X}_j)
 \end{equation}</p>
 
 <p>Furthermore, the Jacobian of the measurement function is given by:</p>
 
 <p>\begin{equation}
-    \mathbf{H} = \frac{\partial h}{\partial \mathbf{X}<em>j} = \begin{bmatrix} \frac{\partial h_1}{\partial \mathbf{X}</em>{j_{1}}} &amp; \frac{\partial h_1}{\partial \mathbf{X}<em>{j</em>{2}}} &amp; \frac{\partial h_1}{\partial \mathbf{X}<em>{j</em>{3}}} \ \frac{\partial h_2}{\partial \mathbf{X}<em>{j</em>{1}}} &amp; \frac{\partial h_2}{\partial \mathbf{X}<em>{j</em>{2}}} &amp; \frac{\partial h_2}{\partial \mathbf{X}<em>{j</em>{3}}} \end{bmatrix}
+    \mathbf{H} = 
+    \begin{bmatrix} 
+        \frac{\partial h_1}{\partial \mathbf{P}_i} &amp; \frac{\partial h_1}{\partial \mathbf{X}_j} <br>
+        \frac{\partial h_2}{\partial \mathbf{P}_i} &amp; \frac{\partial h_2}{\partial \mathbf{X}_j}
+    \end{bmatrix}
 \end{equation}</p>
 
 <p>The error function is given by:</p>
