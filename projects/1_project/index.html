@@ -165,6 +165,138 @@ Hence the pixel motion between two consecutive frames can be written as.
     </div>
 </div>
 
+<p>The above implementation has some below limitations. \</p>
+<ol>
+  <li>Accumulation of errors.
+    <ul>
+      <li>Optical flow methods estimate motion locally on a per-pixel basis, and errors in pixel-level motion estimates can accumulate over time, leading to drift in the reconstructed 3D structure.</li>
+    </ul>
+  </li>
+  <li>No Global Consistency:
+    <ul>
+      <li>Optical flow lacks global consistency across frames, making it challenging to ensure that the reconstructed 3D structure maintains accuracy and coherence over time.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Bundle Adjustment (BA) solves these errors and performs global optimization.</p>
+
+<h1 id="a-brief-note-on-bundle-adjustment">A brief note on Bundle Adjustment.</h1>
+<p>BA is a non-linear method for solving the problem of simultaneously refining a set of initial camera and 3D scene parameters, so that the projected 3D points are as close as possible to the observed 2D points. The goal is to minimize the reprojection error. The reprojection error is the difference between the projected 3D points and the observed 2D points. The reprojection error is minimized using Levenberg-Marquardt algorithm. The reprojection error is given by:</p>
+
+<pre><code class="language-math">$$
+\begin{equation}
+    \epsilon = \sum_{i=1}^{N} \sum_{j=1}^{M} \left\| \mathbf{u}_{ij} - \pi \left( \mathbf{P}_i \mathbf{X}_j \right) \right\|^2
+\end{equation}
+$$
+</code></pre>
+<p>, where $\mathbf{u}_{ij}$ is the $j^{th}$ observed 2D point in the $i^{th}$ image, $\mathbf{P}_i$ is the camera matrix of the $i^{th}$ image and $\mathbf{X}_j$ is the $j^{th}$ 3D point. $\pi$ is the projection function which projects the 3D point to the image plane. The projection function is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    \pi \left( \mathbf{P}_i \mathbf{X}_j \right) = \frac{1}{\mathbf{P}_{i_{3}} \mathbf{X}_{j_{3}}} \begin{bmatrix} \mathbf{P}_{i_{1}} \mathbf{X}_{j_{1}} \\ \mathbf{P}_{i_{2}} \mathbf{X}_{j_{2}} \end{bmatrix}
+\end{equation}
+$$
+</code></pre>
+<p>Now the measurement variable $\mathbf{z}$ is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    \mathbf{z} = h \left( \mathbf{u}_{ij}, \mathbf{X}_j \right) 
+\end{equation}
+$$
+</code></pre>
+<p>, where $h$ is the measurement function which is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    h \left( \mathbf{u}_{ij}, \mathbf{X}_j \right) = \mathbf{u}_{ij} - \pi \left( \mathbf{P}_i \mathbf{X}_j \right)
+\end{equation}
+$$
+</code></pre>
+<p>Furthermore, the Jacobian of the measurement function is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    \mathbf{H} = \frac{\partial h}{\partial \mathbf{X}_j} = \begin{bmatrix} \frac{\partial h_1}{\partial \mathbf{X}_{j_{1}}} &amp; \frac{\partial h_1}{\partial \mathbf{X}_{j_{2}}} &amp; \frac{\partial h_1}{\partial \mathbf{X}_{j_{3}}} \\ \frac{\partial h_2}{\partial \mathbf{X}_{j_{1}}} &amp; \frac{\partial h_2}{\partial \mathbf{X}_{j_{2}}} &amp; \frac{\partial h_2}{\partial \mathbf{X}_{j_{3}}} \end{bmatrix}
+\end{equation}
+$$
+</code></pre>
+<p>The error function is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    \mathbf{e} = \mathbf{z} - h \left( \mathbf{u}_{ij}, \mathbf{X}_j \right)
+\end{equation}
+$$
+</code></pre>
+<p>The main idea is to minimize this error function which is a non-linear function. We can use any other non-linear optimization methods like Guass-Newton, Levenberg-Marquardt, etc. I have used Levenberg-Marquardt algorithm provided by the GTSAM library. For this specific problem there are two Jacobians formed, which are nothing but the partial derivatives of the poses and landmarks. The Jacobian of the poses is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    \frac{\partial \mathbf{e}}{\partial \mathbf{P}_i} = \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial \mathbf{z}}{\partial \mathbf{P}_i} = - \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial h}{\partial \mathbf{P}_i}
+\end{equation}
+$$
+</code></pre>
+<p>The Jacobian of the landmarks is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    \frac{\partial \mathbf{e}}{\partial \mathbf{X}_j} = \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial \mathbf{z}}{\partial \mathbf{X}_j} = - \frac{\partial \mathbf{e}}{\partial \mathbf{z}} \frac{\partial h}{\partial \mathbf{X}_j}
+\end{equation}
+$$
+</code></pre>
+<p>We combine the Jacobians of the poses and landmarks to form the Hessian Matrix used in either Guass-Newton or Levenberg-Marquardt algorithm. The Hessian Matrix is given by:</p>
+<pre><code class="language-math">$$
+\begin{equation}
+    \mathbf{H} = \mathbf{J}^T \mathbf{J}
+\end{equation}
+$$
+</code></pre>
+<p>, where $\mathbf{J}$ is the Jacobian matrix. The Jacobian matrix is given by:</p>
+
+<pre><code class="language-math">$$
+\begin{equation}
+    \mathbf{J} = \begin{bmatrix} \frac{\partial \mathbf{e}}{\partial \mathbf{P}_1} &amp; \frac{\partial \mathbf{e}}{\partial \mathbf{P}_2} &amp; \cdots &amp; \frac{\partial \mathbf{e}}{\partial \mathbf{P}_N} &amp; \frac{\partial \mathbf{e}}{\partial \mathbf{X}_1} &amp; \frac{\partial \mathbf{e}}{\partial \mathbf{X}_2} &amp; \cdots &amp; \frac{\partial \mathbf{e}}{\partial \mathbf{X}_M} \end{bmatrix}
+\end{equation}
+$$
+</code></pre>
+
+<p>Dealing with this Hessian matrix is computationally expensive, as even for small number of poses this matrix can get dense. So we use the Schur Complement to reduce the size of the Hessian matrix or basically make it sparse in a way without loosing any information. \</p>
+
+<p>Read more about Bundle Adjustment <a href="https://www.cs.cmu.edu/~kaess/vslam_cvpr14/media/VSLAM-Tutorial-CVPR14-A13-BundleAdjustment.pdf" rel="external nofollow noopener" target="_blank">here</a>. \</p>
+
+<p>This repo contains the code for the above mentioned title. As it was difficult to write and visualise the results in <code class="language-plaintext highlighter-rouge">.ipynb</code> file, the complete working code is written in the <a href="https://gitlab.com/mewada.y/eece7150/-/blob/main/HW5/Scripts/main.py?ref_type=heads" rel="external nofollow noopener" target="_blank">main.py</a> file. Below is the output I got using bundle adjustment. The 3D structure somewhat resembles that of Buddha. The optimizer tried to minimize the reprojection error upto 420 pixels which is still more as the 3D points are scaled.  \</p>
+
+<h1 id="output">Output</h1>
+<p><img src="https://github.com/yashmewada9618/Structure-from-Motion-using-Bundle-Adjustment/tree/main/Outputs/BA.png" alt="After_BA" width="700">
+<img src="https://github.com/yashmewada9618/Structure-from-Motion-using-Bundle-Adjustment/tree/main/Outputs/compare.png" alt="Comparision" width="700">
+<img src="https://github.com/yashmewada9618/Structure-from-Motion-using-Bundle-Adjustment/tree/main/Outputs/CameraPosesComparision.png" alt="Camposes" width="700"></p>
+
+<h1 id="how-3d-points-are-obtained-in-this-code">How 3D points are obtained in this code?</h1>
+<p>So the steps follwed for creating the 3D points are as follows:</p>
+<ol>
+  <li>For first pair of images the 3D point cloud is initialised.
+    <ul>
+      <li>The keypoints are obtained using SIFT with <code class="language-plaintext highlighter-rouge">nfeatures=5000</code> and <code class="language-plaintext highlighter-rouge">nOctaveLayers=3</code>.</li>
+      <li>The matches are obtained using <code class="language-plaintext highlighter-rouge">cv2.FlannBasedMatcher()</code>.</li>
+      <li>The matches are filtered using <code class="language-plaintext highlighter-rouge">cv2.RANSAC</code> and <code class="language-plaintext highlighter-rouge">cv2.findEssentialMat()</code>.</li>
+      <li>The camera pose is obtained using <code class="language-plaintext highlighter-rouge">cv2.recoverPose()</code>.</li>
+      <li>The 3D points are obtained using <code class="language-plaintext highlighter-rouge">cv2.triangulatePoints()</code>.</li>
+      <li>A dictionary and a class object for 3d points had been maintained throughout the code, where for every 3D point its corresponding 2D points in which it is visible is stored.</li>
+    </ul>
+  </li>
+  <li>For the next pair of images, the 3D points are obtained as follows:
+    <ul>
+      <li>The keypoints are obtained using SIFT with <code class="language-plaintext highlighter-rouge">nfeatures=5000</code> and <code class="language-plaintext highlighter-rouge">nOctaveLayers=3</code>.</li>
+      <li>The matches are obtained using <code class="language-plaintext highlighter-rouge">cv2.FlannBasedMatcher()</code>.</li>
+      <li>The matches are filtered using <code class="language-plaintext highlighter-rouge">cv2.RANSAC</code>.</li>
+      <li>Then an exhaustive search is performed to find if the filtered keypoints where previously in the dictionary or not, if not then it is added to the    dictionary. If it was in the dictionary then its corresponding 3D point and its index is obtained.</li>
+      <li>The new keypoints are again filtered based on the found matched points from the dictionary.</li>
+      <li>Those points are used to obtain the relative Camera poses and this time <code class="language-plaintext highlighter-rouge">cv2.solvePnPRansac()</code>
+</li>
+      <li>For the obtained rotation and translation, the 3D points are triangulated using <code class="language-plaintext highlighter-rouge">cv2.triangulatePoints()</code>.</li>
+      <li>The new 3D points are added to the dictionary and the corresponding 2D points are added to the class object, after checking if the 3D point is already in the dictionary or not.</li>
+    </ul>
+  </li>
+  <li>The above steps are repeated for all the pairs of images. And finally Bundle Adjustment is performed using <code class="language-plaintext highlighter-rouge">gtsam</code> library.</li>
+</ol>
+
+<p>The graph optimization was able to reduce the pixel reprojection error from 1400 to 600 pixels, which is still more. The reason for this is that the 3D points are scaled. The 3D points are scaled because the camera poses are obtained using <code class="language-plaintext highlighter-rouge">cv2.solvePnPRansac()</code> which gives the camera pose upto a scale factor. So the 3D points are scaled. The graph optimization tries to minimize the reprojection error by adjusting the camera poses and the 3D points. But as the 3D points are scaled, the optimizer is not able to reduce the reprojection error below 600 pixels.</p>
+
           </article>
 
         </div>
