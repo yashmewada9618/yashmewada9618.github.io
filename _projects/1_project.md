@@ -2,7 +2,7 @@
 layout: page
 title: Structure From Motion
 description: 3D reconstruction based on sequence of images
-img: assets/img/sfm.png
+img: assets/img/CameraPosesComparision.png
 tags: formatting math
 importance: 1
 category: work
@@ -68,13 +68,17 @@ Now the measurement variable $$\mathbf{z}$$ is given by:
 , where $$h$$ is the measurement function which is given by:
 
 \begin{equation}
-    h \left( \mathbf{u}_{ij}, \mathbf{X}_j \right) = \mathbf{u}_{ij} - \pi \left( \mathbf{P}_i \mathbf{X}_j \right)
+    h (\mathbf{u}_{ij}, \mathbf{X}_j) = \mathbf{u}_{ij} - \pi( \mathbf{P}_i \mathbf{X}_j)
 \end{equation}
 
 Furthermore, the Jacobian of the measurement function is given by:
 
 \begin{equation}
-    \mathbf{H} = \frac{\partial h}{\partial \mathbf{X}_j} = \begin{bmatrix} \frac{\partial h_1}{\partial \mathbf{X}_{j_{1}}} & \frac{\partial h_1}{\partial \mathbf{X}_{j_{2}}} & \frac{\partial h_1}{\partial \mathbf{X}_{j_{3}}} \\ \frac{\partial h_2}{\partial \mathbf{X}_{j_{1}}} & \frac{\partial h_2}{\partial \mathbf{X}_{j_{2}}} & \frac{\partial h_2}{\partial \mathbf{X}_{j_{3}}} \end{bmatrix}
+    \mathbf{H} = 
+    \begin{bmatrix} 
+        \frac{\partial h_1}{\partial \mathbf{P}_i} & \frac{\partial h_1}{\partial \mathbf{X}_j} \\
+        \frac{\partial h_2}{\partial \mathbf{P}_i} & \frac{\partial h_2}{\partial \mathbf{X}_j}
+    \end{bmatrix}
 \end{equation}
 
 The error function is given by:
