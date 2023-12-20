@@ -68,7 +68,7 @@ Now the measurement variable $$\mathbf{z}$$ is given by:
 , where $$h$$ is the measurement function which is given by:
 
 \begin{equation}
-    h (\mathbf{u}_{ij}, \mathbf{X}_j) = \mathbf{u}_{ij} - \pi( \mathbf{P}_i \mathbf{X}_j)
+    h (\mathbf{u_{ij}}, \mathbf{X_j}) = \mathbf{u_{ij}} - \pi( \mathbf{P_i} \mathbf{X_j} )
 \end{equation}
 
 Furthermore, the Jacobian of the measurement function is given by:
