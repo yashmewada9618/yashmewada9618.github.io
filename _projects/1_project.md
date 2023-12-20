@@ -56,7 +56,7 @@ BA is a non-linear method for solving the problem of simultaneously refining a s
 , where $$\mathbf{u}_{ij}$$ is the $$j^{th}$$ observed 2D point in the $$i^{th}$$ image, $$\mathbf{P}_i$$ is the camera matrix of the $$i^{th}$$ image and $$\mathbf{X}_j$$ is the $$j^{th}$$ 3D point. $$\pi$$ is the projection function which projects the 3D point to the image plane. The projection function is given by:
 
 \begin{equation}
-    \pi \left( \mathbf{P}_i \mathbf{X}_j \right) = \frac{1}{\mathbf{P}_{i_{3}} \mathbf{X}_{j_{3}}} \begin{bmatrix} \mathbf{P}_{i_{1}} \mathbf{X}_{j_{1}} \\ \mathbf{P}_{i_{2}} \mathbf{X}_{j_{2}} \end{bmatrix}
+    \pi \left( \mathbf{P_i} \mathbf{X_j} \right) = \frac{1}{\mathbf{P_{i_{3}}} \mathbf{X_{j_{3}}}} \begin{bmatrix} \mathbf{P_{i_{1}}} \mathbf{X_{j_{1}}} \\ \mathbf{P_{i_{2}}} \mathbf{X_{j_{2}}} \end{bmatrix}
 \end{equation}
 
 Now the measurement variable $$\mathbf{z}$$ is given by:
