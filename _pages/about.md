@@ -9,7 +9,6 @@ profile:
   image: profile.png
   image_circular: false # crops the image to make it circular
   address: >
-    <p>857-313-0460</p>
     <p>Boston, MA, 02120</p>
 
 news: false  # includes a list of news items
